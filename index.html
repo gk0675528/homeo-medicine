@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="hi-en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homeopathy Materia Medica & Clinical Repertory (Hinglish)</title>
+    <style>
+        :root {
+            --primary: #006064;
+            --secondary: #0097a7;
+            --bg: #f4f6f8;
+            --text: #333;
+            --card-bg: #ffffff;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 24px;
+        }
+        .disclaimer {
+            background-color: #ffebee;
+            color: #c62828;
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+            border-bottom: 2px solid #ef9a9a;
+        }
+        .search-box {
+            width: 80%;
+            max-width: 500px;
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            border-radius: 25px;
+            outline: none;
+            text-align: center;
+        }
+        main {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .alphabet-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        .alphabet-nav a {
+            text-decoration: none;
+            background: var(--secondary);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .alphabet-nav a:hover {
+            background: var(--primary);
+        }
+        .entry {
+            background: var(--card-bg);
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--secondary);
+        }
+        .entry strong {
+            color: var(--primary);
+            font-size: 18px;
+        }
+        .entry .medicines {
+            color: #555;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+        .potency {
+            font-weight: bold;
+            color: #d32f2f;
+            font-size: 14px;
+        }
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🏥 Homeopathy Materia Medica & Clinical Repertory</h1>
+        <input type="text" id="searchInput" class="search-box" placeholder="Bimari ya Disease search karein... (e.g. Asthma, Acidity)" onkeyup="filterDiseases()">
+    </header>
+
+    <div class="disclaimer">
+        ⚠️ Note: Homeopathy zyada tar serious bimariyon ke ilaaj ke liye vaigyanik roop se pramanit nahi hai. Ye mapping sirf homeopathic practice ki jaankari ke liye hai, koi chikitsa salaah nahi. Gamchha/Doctor se paramarsh karein.
+    </div>
+
+    <main>
+        <div class="alphabet-nav">
+            <a href="#A">A</a><a href="#B">B</a><a href="#C">C</a><a href="#D">D</a><a href="#E">E</a>
+            <a href="#F">F</a><a href="#G">G</a><a href="#H">H</a><a href="#I">I</a><a href="#J">J</a>
+            <a href="#K">K</a><a href="#L">L</a><a href="#M">M</a><a href="#N">N</a><a href="#O">O</a>
+            <a href="#P">P</a><a href="#R">R</a><a href="#S">S</a><a href="#T">T</a><a href="#U">U</a>
+            <a href="#V">V</a><a href="#W">W</a>
+        </div>
+
+        <div id="diseaseList">
+            <!-- DATABASE START -->
+            
+            <div class="entry" id="A"><strong>Abdominal Colic (Pet ka Dard)</strong><div class="medicines">Colocynth <span class="potency">30C</span>, Mag Phos <span class="potency">6X</span>, Dioscorea <span class="potency">30C</span>, Nux Vomica <span class="potency">30C</span>, Staphysagria <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Abortion Threat (Garbhasrava ka Khatra)</strong><div class="medicines">Aconite <span class="potency">30C</span>, Apis Mel <span class="potency">30C</span>, Belladonna <span class="potency">30C</span>, Caulophyllum <span class="potency">30C</span>, Sabina <span class="potency">200C</span>, Secale Cor <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Abscess (Foda)</strong><div class="medicines">Hepar Sulph <span class="potency">200C</span>, Silicea <span class="potency">200C</span>, Merc Sol <span class="potency">30C</span>, Calc Sulph <span class="potency">6X</span>, Myristica <span class="potency">30C</span>, Belladonna <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Acanthosis Nigricans</strong><div class="medicines">Thuja <span class="potency">1M</span>, Arsenicum Album <span class="potency">200C</span>, Sulphur <span class="potency">200C</span>, Lycopodium <span class="potency">200C</span>, Natrum Mur <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Achalasia (Nali ka Sankoch)</strong><div class="medicines">Alumina <span class="potency">200C</span>, Nux Vomica <span class="potency">200C</span>, Hydrastis <span class="potency">30C</span>, Phosphorus <span class="potency">200C</span>, Carbo Veg <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Achilles Tendonitis</strong><div class="medicines">Rhus Tox <span class="potency">30C</span>, Ruta <span class="potency">30C</span>, Bryonia <span class="potency">30C</span>, Ledum <span class="potency">30C</span>, Silicea <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Acidity (Acidity/Amlata)</strong><div class="medicines">Nux Vomica <span class="potency">200C</span>, Robinia <span class="potency">30C</span>, Iris Versicolor <span class="potency">30C</span>, Carbo Veg <span class="potency">30C</span>, Natrum Phos <span class="potency">6X</span></div></div>
+            
+            <div class="entry"><strong>Acne (Muhase)</strong><div class="medicines">Sulphur <span class="potency">200C</span>, Pulsatilla <span class="potency">30C</span>, Silicea <span class="potency">200C</span>, Natrum Mur <span class="potency">200C</span>, Berberis Aquifolium <span class="potency">Q</span></div></div>
+            
+            <div class="entry"><strong>Acne Rosacea</strong><div class="medicines">Carbo Veg <span class="potency">30C</span>, Lachesis <span class="potency">200C</span>, Rosin <span class="potency">30C</span>, Psorinum <span class="potency">200C</span>, Arsenicum Album <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Acoustic Neuroma</strong><div class="medicines">Phosphorus <span class="potency">1M</span>, Thuja <span class="potency">1M</span>, Conium <span class="potency">200C</span>, Silicea <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Acromegaly</strong><div class="medicines">Phosphorus <span class="potency">200C</span>, Silicea <span class="potency">200C</span>, Calcarea Carb <span class="potency">200C</span>, Thuja <span class="potency">1M</span></div></div>
+            
+            <div class="entry"><strong>Actinomycosis</strong><div class="medicines">Hepar Sulph <span class="potency">200C</span>, Silicea <span class="potency">200C</span>, Arsenicum Album <span class="potency">200C</span>, Thuja <span class="potency">1M</span></div></div>
+            
+            <div class="entry"><strong>Acute Respiratory Distress Syndrome (ARDS)</strong><div class="medicines">Antim Tart <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span>, Phosphorus <span class="potency">30C</span>, Carbo Veg <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Addison's Disease</strong><div class="medicines">Arsenicum Album <span class="potency">200C</span>, Phosphorus <span class="potency">200C</span>, Natrum Mur <span class="potency">1M</span>, Silicea <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Adenitis (Gland ki Sujan)</strong><div class="medicines">Belladonna <span class="potency">30C</span>, Calcarea Carb <span class="potency">200C</span>, Iodum <span class="potency">30C</span>, Bromium <span class="potency">30C</span>, Baryta Carb <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Adenoids (Gland ki Badi)</strong><div class="medicines">Agraphis <span class="potency">30C</span>, Calcarea Carb <span class="potency">200C</span>, Baryta Carb <span class="potency">200C</span>, Thuja <span class="potency">200C</span>, Silicea <span class="potency">200C</span>, Tuberculinum <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>ADHD (Dhyan ka Kam)</strong><div class="medicines">Tarentula <span class="potency">200C</span>, Medorrhinum <span class="potency">1M</span>, Veratrum Album <span class="potency">200C</span>, Phosphorus <span class="potency">200C</span>, Tuberculinum <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Adhesive Capsulitis (Frozen Shoulder)</strong><div class="medicines">Rhus Tox <span class="potency">30C</span>, Sanguinaria <span class="potency">30C</span>, Ferrum Phos <span class="potency">6X</span>, Bryonia <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Alcoholism (Sharab ki Lat)</strong><div class="medicines">Sulphur <span class="potency">200C</span>, Nux Vomica <span class="potency">200C</span>, Lachesis <span class="potency">200C</span>, Quercus <span class="potency">Q</span>, Caladium <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Alopecia (Baal Jhadna)</strong><div class="medicines">Phosphorus <span class="potency">200C</span>, Fluoric Acid <span class="potency">200C</span>, Sepia <span class="potency">200C</span>, Lycopodium <span class="potency">200C</span>, Nitric Acid <span class="potency">200C</span>, Silicea <span class="potency">200C</span>, Selenium <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Alzheimer's Disease (Smriti Bhram)</strong><div class="medicines">Baryta Carb <span class="potency">1M</span>, Alumina <span class="potency">1M</span>, Zincum <span class="potency">200C</span>, Phosphorus <span class="potency">200C</span>, Syphilinum <span class="potency">1M</span></div></div>
+            
+            <div class="entry"><strong>Amenorrhea (Mahamari na aana)</strong><div class="medicines">Pulsatilla <span class="potency">200C</span>, Sepia <span class="potency">200C</span>, Natrum Mur <span class="potency">200C</span>, Caulophyllum <span class="potency">30C</span>, Senecio Aureus <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Amoebiasis (Amebik Dysentery)</strong><div class="medicines">Merc Sol <span class="potency">30C</span>, Nux Vomica <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span>, Aloe <span class="potency">30C</span>, Ipecac <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Amyloidosis</strong><div class="medicines">Arsenicum Album <span class="potency">200C</span>, Phosphorus <span class="potency">200C</span>, Lycopodium <span class="potency">200C</span>, Thuja <span class="potency">1M</span></div></div>
+            
+            <div class="entry"><strong>Amyotrophic Lateral Sclerosis (ALS)</strong><div class="medicines">Phosphorus <span class="potency">1M</span>, Causticum <span class="potency">1M</span>, Plumbum Met <span class="potency">200C</span>, Arsenicum Album <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Anaphylaxis</strong><div class="medicines">Apis Mel <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span>, Carbo Veg <span class="potency">30C</span>, Aconite <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Anemia (Khoon ki Kami)</strong><div class="medicines">China <span class="potency">200C</span>, Ferrum Met <span class="potency">200C</span>, Natrum Mur <span class="potency">200C</span>, Calcarea Carb <span class="potency">200C</span>, Phosphorus <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Aneurysm</strong><div class="medicines">Phosphorus <span class="potency">200C</span>, Arsenicum Album <span class="potency">200C</span>, Lachesis <span class="potency">200C</span>, Baryta Mur <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Angina Pectoris (Seene ka Dard)</strong><div class="medicines">Cactus <span class="potency">30C</span>, Arnica <span class="potency">30C</span>, Crataegus <span class="potency">Q</span>, Glonoine <span class="potency">30C</span>, Spigelia <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Angioedema</strong><div class="medicines">Apis Mel <span class="potency">30C</span>, Natrum Mur <span class="potency">200C</span>, Arsenicum Album <span class="potency">30C</span>, Urtica Urens <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Ankylosing Spondylitis (Kamar ki Gathiya)</strong><div class="medicines">Rhus Tox <span class="potency">200C</span>, Kalmia <span class="potency">200C</span>, Phosphorus <span class="potency">200C</span>, Silicea <span class="potency">200C</span>, Aurum Met <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Anorexia Nervosa (Bhook na lagana)</strong><div class="medicines">Ignatia <span class="potency">200C</span>, Natrum Mur <span class="potency">1M</span>, Phosphoric Acid <span class="potency">200C</span>, Carcinosin <span class="potency">200C</span>, Staphysagria <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Anthrax</strong><div class="medicines">Anthracinum <span class="potency">200C</span>, Arsenicum Album <span class="potency">30C</span>, Lachesis <span class="potency">200C</span>, Hepar Sulph <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Anxiety (Chinta/Bhet)</strong><div class="medicines">Aconite <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span>, Gelsemium <span class="potency">30C</span>, Argentum Nitricum <span class="potency">200C</span>, Ignatia <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Aortic Stenosis</strong><div class="medicines">Crataegus <span class="potency">Q</span>, Arnica <span class="potency">30C</span>, Lachesis <span class="potency">200C</span>, Phosphorus <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Aphthous Ulcer (Muh ke Chhale)</strong><div class="medicines">Borax <span class="potency">30C</span>, Merc Sol <span class="potency">30C</span>, Nitric Acid <span class="potency">200C</span>, Sulphur <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Aplastic Anemia</strong><div class="medicines">Phosphorus <span class="potency">1M</span>, China <span class="potency">200C</span>, Ferrum Met <span class="potency">200C</span>, Arsenicum Album <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Apnea (Saans rukna)</strong><div class="medicines">Grindelia <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span>, Lachesis <span class="potency">200C</span>, Ammonium Carb <span class="potency">30C</span>, Opium <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Appendicitis</strong><div class="medicines">Belladonna <span class="potency">30C</span>, Iris Tenax <span class="potency">30C</span>, Lycopodium <span class="potency">200C</span>, Rhus Tox <span class="potency">30C</span>, Bryonia <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Appetite Loss (Bhook na lagana)</strong><div class="medicines">Alfalfa <span class="potency">Q</span>, Ipecac <span class="potency">30C</span>, Nux Vomica <span class="potency">30C</span>, Ignatia <span class="potency">200C</span>, Phosphorus <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Arrhythmia (Dhadakne ka galat tareeqa)</strong><div class="medicines">Digitalis <span class="potency">30C</span>, Crataegus <span class="potency">Q</span>, Aconite <span class="potency">30C</span>, Spongia <span class="potency">30C</span>, Lachesis <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Arthritis (Gathiya)</strong><div class="medicines">Rhus Tox <span class="potency">30C</span>, Bryonia <span class="potency">30C</span>, Ledum <span class="potency">30C</span>, Pulsatilla <span class="potency">30C</span>, Calcarea Carb <span class="potency">200C</span>, Causticum <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Ascariasis (Krimi Rog)</strong><div class="medicines">Cina <span class="potency">200C</span>, Santonin <span class="potency">30C</span>, Spigelia <span class="potency">30C</span>, Natrum Mur <span class="potency">200C</span>, Teucrium <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Ascites (Pet mein Pani)</strong><div class="medicines">Apis Mel <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span>, Digitalis <span class="potency">30C</span>, Lachesis <span class="potency">200C</span>, Sulphur <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Asthma (Dama/Saans ki Bimari)</strong><div class="medicines">Arsenicum Album <span class="potency">30C</span>, Ipecac <span class="potency">30C</span>, Antim Tart <span class="potency">30C</span>, Natrum Sulph <span class="potency">200C</span>, Blatta Orientalis <span class="potency">Q</span>, Spongia <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Astigmatism</strong><div class="medicines">Ruta <span class="potency">30C</span>, Phosphorus <span class="potency">200C</span>, Physostigma <span class="potency">30C</span>, Natrum Mur <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Atherosclerosis (Dil ki Nali ka block)</strong><div class="medicines">Baryta Mur <span class="potency">200C</span>, Aurum Met <span class="potency">200C</span>, Crataegus <span class="potency">Q</span>, Plumbum Met <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Athlete's Foot (Paon ki Khujli)</strong><div class="medicines">Silicea <span class="potency">200C</span>, Graphites <span class="potency">200C</span>, Sulphur <span class="potency">200C</span>, Petroleum <span class="potency">30C</span>, Nitric Acid <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Atopic Dermatitis</strong><div class="medicines">Sulphur <span class="potency">200C</span>, Graphites <span class="potency">200C</span>, Petroleum <span class="potency">30C</span>, Rhus Tox <span class="potency">30C</span>, Mezereum <span class="potency">30C</span>, Psorinum <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Atrophy (Sukhana)</strong><div class="medicines">Phosphorus <span class="potency">200C</span>, Silicea <span class="potency">200C</span>, Plumbum Met <span class="potency">200C</span>, Alumina <span class="potency">200C</span>, Fluoric Acid <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Autism (Autism Spectrum)</strong><div class="medicines">Carcinosin <span class="potency">200C</span>, Baryta Carb <span class="potency">1M</span>, Thuja <span class="potency">1M</span>, Calcarea Carb <span class="potency">200C</span>, Natrum Mur <span class="potency">1M</span>, Medorrhinum <span class="potency">1M</span></div></div>
+            
+            <div class="entry" id="B"><strong>Back Pain (Kamar Dard)</strong><div class="medicines">Rhus Tox <span class="potency">30C</span>, Bryonia <span class="potency">30C</span>, Kali Carb <span class="potency">200C</span>, Nux Vomica <span class="potency">30C</span>, Arnica <span class="potency">30C</span>, Silicea <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Bad Breath (Muh ki Badboo)</strong><div class="medicines">Merc Sol <span class="potency">30C</span>, Pulsatilla <span class="potency">30C</span>, Carbo Veg <span class="potency">30C</span>, Kreosote <span class="potency">30C</span>, Nux Vomica <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Bed Wetting (Pishab karne ki aadat)</strong><div class="medicines">Equisetum <span class="potency">30C</span>, Kreosote <span class="potency">200C</span>, Causticum <span class="potency">200C</span>, Sepia <span class="potency">200C</span>, Medorrhinum <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Behcet's Disease</strong><div class="medicines">Arsenicum Album <span class="potency">200C</span>, Lachesis <span class="potency">200C</span>, Nitric Acid <span class="potency">200C</span>, Thuja <span class="potency">1M</span>, Borax <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Bell's Palsy (Ardhang)</strong><div class="medicines">Causticum <span class="potency">200C</span>, Nux Vomica <span class="potency">200C</span>, Cadmium Sulph <span class="potency">30C</span>, Lycopodium <span class="potency">200C</span>, Phosphorus <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Benign Prostatic Hypertrophy (Prostate ka badna)</strong><div class="medicines">Conium <span class="potency">200C</span>, Baryta Carb <span class="potency">200C</span>, Thuja <span class="potency">200C</span>, Pulsatilla <span class="potency">30C</span>, Chimaphila <span class="potency">30C</span>, Sabal Serrulata <span class="potency">Q</span></div></div>
+            
+            <div class="entry"><strong>Bipolar Disorder (Mood ka badlna)</strong><div class="medicines">Lachesis <span class="potency">200C</span>, Natrum Mur <span class="potency">1M</span>, Ignatia <span class="potency">200C</span>, Veratrum Album <span class="potency">200C</span>, Aurum Met <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Bleeding (Khoon behna)</strong><div class="medicines">Ipecac <span class="potency">30C</span>, Erigeron <span class="potency">30C</span>, Trillium <span class="potency">30C</span>, Secale Cor <span class="potency">30C</span>, Phosphorus <span class="potency">30C</span>, Hamamelis <span class="potency">30C</span>, Millefolium <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Blepharitis (Palko ki sujan)</strong><div class="medicines">Hepar Sulph <span class="potency">30C</span>, Staphysagria <span class="potency">30C</span>, Graphites <span class="potency">200C</span>, Pulsatilla <span class="potency">30C</span>, Arg Nit <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Bloating (Pet phoolna)</strong><div class="medicines">Carbo Veg <span class="potency">30C</span>, Lycopodium <span class="potency">200C</span>, Nux Vomica <span class="potency">30C</span>, Pulsatilla <span class="potency">30C</span>, China <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Boils (Funsi/Foda)</strong><div class="medicines">Hepar Sulph <span class="potency">200C</span>, Silicea <span class="potency">200C</span>, Arnica <span class="potency">30C</span>, Sulphur <span class="potency">200C</span>, Merc Sol <span class="potency">30C</span>, Myristica <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Bone Fracture (Haddi tootna)</strong><div class="medicines">Symphytum <span class="potency">30C</span>, Calcarea Phos <span class="potency">6X</span>, Arnica <span class="potency">30C</span>, Ruta <span class="potency">30C</span>, Silicea <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Brain Fog (Dhimghi)</strong><div class="medicines">Kali Phos <span class="potency">6X</span>, Natrum Mur <span class="potency">200C</span>, Phosphoric Acid <span class="potency">200C</span>, Sulphur <span class="potency">200C</span>, Lycopodium <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Brain Tumor (Dimag ka Ghav)</strong><div class="medicines">Conium <span class="potency">1M</span>, Phosphorus <span class="potency">1M</span>, Thuja <span class="potency">1M</span>, Silicea <span class="potency">1M</span>, Carcinosin <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Breast Cancer</strong><div class="medicines">Conium <span class="potency">1M</span>, Phytolacca <span class="potency">200C</span>, Asterias Rubens <span class="potency">200C</span>, Carcinosin <span class="potency">200C</span>, Thuja <span class="potency">1M</span></div></div>
+            
+            <div class="entry"><strong>Breast Pain (Chhati ka dard)</strong><div class="medicines">Conium <span class="potency">30C</span>, Phytolacca <span class="potency">30C</span>, Belladonna <span class="potency">30C</span>, Bryonia <span class="potency">30C</span>, Chamomilla <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Bronchiectasis</strong><div class="medicines">Antim Tart <span class="potency">30C</span>, Kali Bich <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span>, Silicea <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Bronchitis (Khasi/Sans nali ki sujan)</strong><div class="medicines">Antim Tart <span class="potency">30C</span>, Bryonia <span class="potency">30C</span>, Kali Bich <span class="potency">30C</span>, Ipecac <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span>, Spongia <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Bruxism (Dant kinchna)</strong><div class="medicines">Cina <span class="potency">200C</span>, Santonin <span class="potency">30C</span>, Nux Vomica <span class="potency">30C</span>, Baryta Carb <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Bulimia</strong><div class="medicines">Natrum Mur <span class="potency">1M</span>, Ignatia <span class="potency">200C</span>, Carcinosin <span class="potency">200C</span>, Pulsatilla <span class="potency">200C</span>, Ipecac <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Burns (Jalna)</strong><div class="medicines">Cantharis <span class="potency">30C</span>, Causticum <span class="potency">30C</span>, Urtica Urens <span class="potency">30C</span>, Arnica <span class="potency">30C</span>, Calendula <span class="potency">Q</span></div></div>
+            
+            <div class="entry"><strong>Bursitis (Jod ki sujan)</strong><div class="medicines">Rhus Tox <span class="potency">30C</span>, Bryonia <span class="potency">30C</span>, Apis Mel <span class="potency">30C</span>, Benzoic Acid <span class="potency">30C</span>, Silicea <span class="potency">200C</span></div></div>
+
+            <div class="entry" id="C"><strong>Calcaneal Spur (Edi ka kanta)</strong><div class="medicines">Calcarea Fluor <span class="potency">6X</span>, Rhus Tox <span class="potency">30C</span>, Silicea <span class="potency">200C</span>, Medorrhinum <span class="potency">200C</span>, Ammonium Mur <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Calculi (Pathri)</strong><div class="medicines">Berberis Vulg <span class="potency">30C</span>, Lycopodium <span class="potency">200C</span>, Sarsaparilla <span class="potency">30C</span>, Calcarea Carb <span class="potency">200C</span>, Ocimum Canum <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Cancer (Kark Rog)</strong><div class="medicines">Carcinosin <span class="potency">200C</span>, Conium <span class="potency">1M</span>, Thuja <span class="potency">1M</span>, Phytolacca <span class="potency">200C</span>, Arsenicum Album <span class="potency">200C</span>, Phosphorus <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Candidiasis (Fungal Infection)</strong><div class="medicines">Borax <span class="potency">30C</span>, Monilia <span class="potency">30C</span>, Thuja <span class="potency">200C</span>, Sulphur <span class="potency">200C</span>, Nitric Acid <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Cardiac Failure (Dil ki Kamzori)</strong><div class="medicines">Crataegus <span class="potency">Q</span>, Digitalis <span class="potency">30C</span>, Laurocerasus <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span>, Carbo Veg <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Carpal Tunnel Syndrome</strong><div class="medicines">Rhus Tox <span class="potency">30C</span>, Causticum <span class="potency">200C</span>, Phosphorus <span class="potency">200C</span>, Hypericum <span class="potency">30C</span>, Ruta <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Cataract (Motiyabind)</strong><div class="medicines">Cineraria Maritima <span class="potency">Q</span>, Calcarea Carb <span class="potency">200C</span>, Conium <span class="potency">200C</span>, Phosphorus <span class="potency">200C</span>, Silicea <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Catarrh (Zukam/Jaleen)</strong><div class="medicines">Kali Bich <span class="potency">30C</span>, Pulsatilla <span class="potency">30C</span>, Nux Vomica <span class="potency">30C</span>, Ammonium Carb <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Cervical Spondylosis (Gardan ka dard)</strong><div class="medicines">Rhus Tox <span class="potency">30C</span>, Cimicifuga <span class="potency">30C</span>, Kali Carb <span class="potency">30C</span>, Bryonia <span class="potency">30C</span>, Gelsemium <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Chalazion (Palki ka guthna)</strong><div class="medicines">Conium <span class="potency">30C</span>, Staphysagria <span class="potency">30C</span>, Thuja <span class="potency">200C</span>, Pulsatilla <span class="potency">30C</span>, Silicea <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Chicken Pox (Chhoti Mata)</strong><div class="medicines">Aconite <span class="potency">30C</span>, Pulsatilla <span class="potency">30C</span>, Rhus Tox <span class="potency">30C</span>, Antim Crud <span class="potency">30C</span>, Variolinum <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Chilblains (Sardiyon mein unglio ka sujna)</strong><div class="medicines">Agaricus <span class="potency">30C</span>, Pulsatilla <span class="potency">30C</span>, Petroleum <span class="potency">30C</span>, Lachesis <span class="potency">30C</span>, Secale Cor <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Cholecystitis (Pitt ki thaili ki sujan)</strong><div class="medicines">Chelidonium <span class="potency">30C</span>, Lycopodium <span class="potency">200C</span>, Phosphorus <span class="potency">30C</span>, Bryonia <span class="potency">30C</span>, Carduus Marianus <span class="potency">Q</span></div></div>
+            
+            <div class="entry"><strong>Cholera (Haiza)</strong><div class="medicines">Camphor <span class="potency">30C</span>, Cuprum Met <span class="potency">30C</span>, Veratrum Album <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span>, Carbo Veg <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Chorea (Vriti Nakhla)</strong><div class="medicines">Tarentula <span class="potency">200C</span>, Agaricus <span class="potency">30C</span>, Cina <span class="potency">200C</span>, Mygale <span class="potency">30C</span>, Cuprum Met <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Chronic Fatigue Syndrome (Thakaan)</strong><div class="medicines">Phosphoric Acid <span class="potency">200C</span>, Gelsemium <span class="potency">30C</span>, Kali Phos <span class="potency">6X</span>, Carcinosin <span class="potency">200C</span>, Thuja <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Cirrhosis (Yakrit ka sujna/kharab)</strong><div class="medicines">Lycopodium <span class="potency">200C</span>, Carduus Marianus <span class="potency">Q</span>, Phosphorus <span class="potency">200C</span>, Chelidonium <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Cold (Sardi/Zukam)</strong><div class="medicines">Aconite <span class="potency">30C</span>, Gelsemium <span class="potency">30C</span>, Nux Vomica <span class="potency">30C</span>, Pulsatilla <span class="potency">30C</span>, Allium Cepa <span class="potency">30C</span>, Natrum Mur <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Colic (Pet ka dard)</strong><div class="medicines">Colocynth <span class="potency">30C</span>, Mag Phos <span class="potency">6X</span>, Dioscorea <span class="potency">30C</span>, Nux Vomica <span class="potency">30C</span>, Chamomilla <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Colitis (Badi aant ki sujan)</strong><div class="medicines">Merc Sol <span class="potency">30C</span>, Nitric Acid <span class="potency">200C</span>, Phosphorus <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span>, Lycopodium <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Coma (Be-hoshi)</strong><div class="medicines">Opium <span class="potency">30C</span>, Camphor <span class="potency">30C</span>, Carbo Veg <span class="potency">30C</span>, Laurocerasus <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Common Cold (Zukam)</strong><div class="medicines">Aconite <span class="potency">30C</span>, Gelsemium <span class="potency">30C</span>, Nux Vomica <span class="potency">30C</span>, Pulsatilla <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span>, Kali Bich <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Conjunctivitis (Aankh aana)</strong><div class="medicines">Euphrasia <span class="potency">30C</span>, Belladonna <span class="potency">30C</span>, Pulsatilla <span class="potency">30C</span>, Argentum Nitricum <span class="potency">30C</span>, Apis Mel <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Constipation (Kabz)</strong><div class="medicines">Nux Vomica <span class="potency">30C</span>, Bryonia <span class="potency">30C</span>, Alumina <span class="potency">200C</span>, Silicea <span class="potency">200C</span>, Calcarea Carb <span class="potency">200C</span>, Opium <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Convulsions (Mirgi ka daura)</strong><div class="medicines">Cuprum Met <span class="potency">30C</span>, Bufo <span class="potency">30C</span>, Cicuta <span class="potency">30C</span>, Nux Vomica <span class="potency">30C</span>, Calcarea Carb <span class="potency">200C</span>, Belladonna <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Corneal Ulcer</strong><div class="medicines">Euphrasia <span class="potency">30C</span>, Hepar Sulph <span class="potency">30C</span>, Pulsatilla <span class="potency">30C</span>, Merc Sol <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Corn (Masse/kadde)</strong><div class="medicines">Antim Crud <span class="potency">30C</span>, Sulphur <span class="potency">200C</span>, Graphites <span class="potency">200C</span>, Nitric Acid <span class="potency">200C</span>, Causticum <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Costochondritis</strong><div class="medicines">Bryonia <span class="potency">30C</span>, Rhus Tox <span class="potency">30C</span>, Arnica <span class="potency">30C</span>, Phosphorus <span class="potency">30C</span>, Kali Carb <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Cough (Khasi)</strong><div class="medicines">Bryonia <span class="potency">30C</span>, Hepar Sulph <span class="potency">30C</span>, Ipecac <span class="potency">30C</span>, Rumex <span class="potency">30C</span>, Spongia <span class="potency">30C</span>, Drosera <span class="potency">30C</span>, Antim Tart <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Cramps (Mchi tight hona)</strong><div class="medicines">Mag Phos <span class="potency">6X</span>, Cuprum Met <span class="potency">30C</span>, Nux Vomica <span class="potency">30C</span>, Causticum <span class="potency">30C</span>, Colocynth <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Croup (Bacchon ki khasi)</strong><div class="medicines">Aconite <span class="potency">30C</span>, Hepar Sulph <span class="potency">30C</span>, Spongia <span class="potency">30C</span>, Kali Bich <span class="potency">30C</span>, Antim Tart <span class="potency">30C</span>, Bromium <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Cystic Fibrosis</strong><div class="medicines">Antim Tart <span class="potency">30C</span>, Kali Bich <span class="potency">30C</span>, Phosphorus <span class="potency">200C</span>, Arsenicum Album <span class="potency">30C</span>, Silicea <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Cystitis (Pishab ki sujan)</strong><div class="medicines">Cantharis <span class="potency">30C</span>, Apis Mel <span class="potency">30C</span>, Sarsaparilla <span class="potency">30C</span>, Staphysagria <span class="potency">30C</span>, Berberis Vulg <span class="potency">30C</span></div></div>
+
+            <div class="entry" id="D"><strong>Dandruff (Khopri ki russi)</strong><div class="medicines">Kali Sulph <span class="potency">6X</span>, Thuja <span class="potency">200C</span>, Sulphur <span class="potency">200C</span>, Graphites <span class="potency">200C</span>, Natrum Mur <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Deafness (Bahrapan)</strong><div class="medicines">Pulsatilla <span class="potency">30C</span>, Silicea <span class="potency">200C</span>, Graphites <span class="potency">200C</span>, Phosphorus <span class="potency">200C</span>, Baryta Carb <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Dengue Fever</strong><div class="medicines">Eupatorium Perfoliatum <span class="potency">30C</span>, Gelsemium <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span>, Phosphorus <span class="potency">30C</span>, Ipecac <span class="potency">30C</span>, Crotalus Horridus <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Depression (Avsaad)</strong><div class="medicines">Natrum Mur <span class="potency">1M</span>, Ignatia <span class="potency">200C</span>, Aurum Met <span class="potency">200C</span>, Phosphoric Acid <span class="potency">200C</span>, Sepia <span class="potency">200C</span>, Lycopodium <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Dermatitis (Twacha ki sujan)</strong><div class="medicines">Sulphur <span class="potency">200C</span>, Graphites <span class="potency">200C</span>, Petroleum <span class="potency">30C</span>, Rhus Tox <span class="potency">30C</span>, Mezereum <span class="potency">30C</span>, Psorinum <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Diabetes Mellitus (Madhumeh)</strong><div class="medicines">Syzygium <span class="potency">30C</span>, Phosphorus <span class="potency">200C</span>, Arsenicum Album <span class="potency">200C</span>, Lycopodium <span class="potency">200C</span>, Gymnema Sylvestre <span class="potency">Q</span>, Uranium Nitricum <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Diaper Rash</strong><div class="medicines">Borax <span class="potency">30C</span>, Sulphur <span class="potency">30C</span>, Graphites <span class="potency">30C</span>, Calendula <span class="potency">Q</span>, Hepar Sulph <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Diarrhea (Dast)</strong><div class="medicines">Aloe <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span>, Podophyllum <span class="potency">30C</span>, Veratrum Album <span class="potency">30C</span>, Pulsatilla <span class="potency">30C</span>, Ipecac <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Diphtheria</strong><div class="medicines">Lachesis <span class="potency">30C</span>, Merc Cyan <span class="potency">30C</span>, Kali Bich <span class="potency">30C</span>, Phytolacca <span class="potency">30C</span>, Nitric Acid <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Disc Prolapse (Disc slip)</strong><div class="medicines">Rhus Tox <span class="potency">30C</span>, Bryonia <span class="potency">30C</span>, Hypericum <span class="potency">30C</span>, Kali Carb <span class="potency">30C</span>, Phosphorus <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Dizziness (Chakkar aana)</strong><div class="medicines">Gelsemium <span class="potency">30C</span>, Conium <span class="potency">30C</span>, Bryonia <span class="potency">30C</span>, Pulsatilla <span class="potency">30C</span>, Cocculus <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Dry Eye (Aankh sukhna)</strong><div class="medicines">Euphrasia <span class="potency">30C</span>, Natrum Mur <span class="potency">200C</span>, Pulsatilla <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Dysentery (Pechish)</strong><div class="medicines">Merc Sol <span class="potency">30C</span>, Nux Vomica <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span>, Aloe <span class="potency">30C</span>, Ipecac <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Dysmenorrhea (Mahamari ka dard)</strong><div class="medicines">Mag Phos <span class="potency">6X</span>, Colocynth <span class="potency">30C</span>, Pulsatilla <span class="potency">30C</span>, Sepia <span class="potency">200C</span>, Caulophyllum <span class="potency">30C</span>, Cimicifuga <span class="potency">30C</span></div></div>
+
+            <div class="entry" id="E"><strong>Earache (Kan ka dard)</strong><div class="medicines">Pulsatilla <span class="potency">30C</span>, Belladonna <span class="potency">30C</span>, Chamomilla <span class="potency">30C</span>, Silicea <span class="potency">200C</span>, Hepar Sulph <span class="potency">30C</span>, Merc Sol <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Ear Discharge (Kan ka pani)</strong><div class="medicines">Pulsatilla <span class="potency">30C</span>, Silicea <span class="potency">200C</span>, Merc Sol <span class="potency">30C</span>, Hepar Sulph <span class="potency">30C</span>, Tellurium <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Eczema (Khaj/Khujli)</strong><div class="medicines">Sulphur <span class="potency">200C</span>, Graphites <span class="potency">200C</span>, Petroleum <span class="potency">30C</span>, Mezereum <span class="potency">30C</span>, Rhus Tox <span class="potency">30C</span>, Psorinum <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Edema (Sujan/Pani bharna)</strong><div class="medicines">Apis Mel <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span>, Digitalis <span class="potency">30C</span>, Lachesis <span class="potency">200C</span>, Natrum Mur <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Epilepsy (Mirgi)</strong><div class="medicines">Cuprum Met <span class="potency">30C</span>, Bufo <span class="potency">30C</span>, Cicuta <span class="potency">30C</span>, Nux Vomica <span class="potency">200C</span>, Calcarea Carb <span class="potency">200C</span>, Artemisia Vulgaris <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Epistaxis (Nak se khoon)</strong><div class="medicines">Ferrum Phos <span class="potency">6X</span>, Hamamelis <span class="potency">30C</span>, Aconite <span class="potency">30C</span>, Melilotus <span class="potency">30C</span>, Phosphorus <span class="potency">30C</span>, Ipecac <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Erectile Dysfunction (Napunsakta)</strong><div class="medicines">Lycopodium <span class="potency">200C</span>, Agnus Castus <span class="potency">200C</span>, Caladium <span class="potency">30C</span>, Selenium <span class="potency">30C</span>, Phosphorus <span class="potency">200C</span>, Avena Sativa <span class="potency">Q</span></div></div>
+            
+            <div class="entry"><strong>Erysipelas</strong><div class="medicines">Belladonna <span class="potency">30C</span>, Apis Mel <span class="potency">30C</span>, Lachesis <span class="potency">30C</span>, Rhus Tox <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Exostosis (Haddi ka badna)</strong><div class="medicines">Calcarea Fluor <span class="potency">6X</span>, Hekla Lava <span class="potency">30C</span>, Thuja <span class="potency">200C</span>, Phosphorus <span class="potency">200C</span>, Syphilinum <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Eye Strain (Aankh ki thakaan)</strong><div class="medicines">Ruta <span class="potency">30C</span>, Natrum Mur <span class="potency">30C</span>, Onosmodium <span class="potency">30C</span>, Gelsemium <span class="potency">30C</span>, Euphrasia <span class="potency">30C</span></div></div>
+
+            <div class="entry" id="F"><strong>Facial Paralysis (Ardit)</strong><div class="medicines">Causticum <span class="potency">200C</span>, Nux Vomica <span class="potency">200C</span>, Cadmium Sulph <span class="potency">30C</span>, Belladonna <span class="potency">30C</span>, Phosphorus <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Fatty Liver (Chikni Yakrit)</strong><div class="medicines">Chelidonium <span class="potency">30C</span>, Carduus Marianus <span class="potency">Q</span>, Lycopodium <span class="potency">200C</span>, Phosphorus <span class="potency">200C</span>, Nux Vomica <span class="potency">30C</span>, Natrum Sulph <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Fever (Bukhar)</strong><div class="medicines">Aconite <span class="potency">30C</span>, Belladonna <span class="potency">30C</span>, Gelsemium <span class="potency">30C</span>, Bryonia <span class="potency">30C</span>, Eupatorium Perf <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Fibroadenoma (Stan ka guthna)</strong><div class="medicines">Conium <span class="potency">200C</span>, Phytolacca <span class="potency">30C</span>, Calcarea Fluor <span class="potency">6X</span>, Thuja <span class="potency">200C</span>, Silicea <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Fibromyalgia (Masle ka dard)</strong><div class="medicines">Rhus Tox <span class="potency">30C</span>, Arnica <span class="potency">30C</span>, Bryonia <span class="potency">30C</span>, Gelsemium <span class="potency">30C</span>, Kali Phos <span class="potency">6X</span>, Causticum <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Fissure in Ano (Bawaseer ka phatna)</strong><div class="medicines">Nitric Acid <span class="potency">200C</span>, Ratanhia <span class="potency">30C</span>, Paeonia <span class="potency">30C</span>, Silicea <span class="potency">200C</span>, Nux Vomica <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Fistula (Naasoor)</strong><div class="medicines">Silicea <span class="potency">200C</span>, Hepar Sulph <span class="potency">200C</span>, Calcarea Sulph <span class="potency">6X</span>, Paeonia <span class="potency">30C</span>, Nitric Acid <span class="potency">200C</span>, Berberis Vulg <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Flatulence (Pet mein gas)</strong><div class="medicines">Carbo Veg <span class="potency">30C</span>, Lycopodium <span class="potency">30C</span>, Nux Vomica <span class="potency">30C</span>, Pulsatilla <span class="potency">30C</span>, China <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Flu (Influenza)</strong><div class="medicines">Gelsemium <span class="potency">30C</span>, Eupatorium Perf <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span>, Aconite <span class="potency">30C</span>, Bryonia <span class="potency">30C</span>, Oscillococcinum <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Food Poisoning</strong><div class="medicines">Arsenicum Album <span class="potency">30C</span>, Ipecac <span class="potency">30C</span>, Nux Vomica <span class="potency">30C</span>, Podophyllum <span class="potency">30C</span>, Veratrum Album <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Forgetfulness (Bhoolne ki bimari)</strong><div class="medicines">Baryta Carb <span class="potency">200C</span>, Anacardium <span class="potency">200C</span>, Lycopodium <span class="potency">200C</span>, Natrum Mur <span class="potency">200C</span>, Kali Phos <span class="potency">6X</span></div></div>
+            
+            <div class="entry"><strong>Fracture (Haddi tootna)</strong><div class="medicines">Symphytum <span class="potency">30C</span>, Calcarea Phos <span class="potency">6X</span>, Arnica <span class="potency">30C</span>, Ruta <span class="potency">30C</span>, Silicea <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Fungal Infection (Fungi ka rog)</strong><div class="medicines">Sulphur <span class="potency">200C</span>, Thuja <span class="potency">200C</span>, Tellurium <span class="potency">30C</span>, Borax <span class="potency">30C</span>, Graphites <span class="potency">200C</span>, Nitric Acid <span class="potency">200C</span></div></div>
+
+            <div class="entry" id="G"><strong>Gallstones (Pitt ki pathri)</strong><div class="medicines">Chelidonium <span class="potency">30C</span>, Lycopodium <span class="potency">200C</span>, Carduus Marianus <span class="potency">Q</span>, Berberis Vulg <span class="potency">30C</span>, Phosphorus <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Gangrene</strong><div class="medicines">Secale Cor <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span>, Lachesis <span class="potency">30C</span>, Carbo Veg <span class="potency">30C</span>, Silicea <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Gastric Ulcer</strong><div class="medicines">Phosphorus <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span>, Nux Vomica <span class="potency">30C</span>, Kali Bich <span class="potency">30C</span>, Carbo Veg <span class="potency">30C</span>, Ornithogalum <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Gastritis (Amlata/Pet ki sujan)</strong><div class="medicines">Nux Vomica <span class="potency">30C</span>, Carbo Veg <span class="potency">30C</span>, Pulsatilla <span class="potency">30C</span>, Lycopodium <span class="potency">30C</span>, Iris Versicolor <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Gastroenteritis (Pet ki bimari)</strong><div class="medicines">Arsenicum Album <span class="potency">30C</span>, Veratrum Album <span class="potency">30C</span>, Podophyllum <span class="potency">30C</span>, Aloe <span class="potency">30C</span>, Ipecac <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>GERD (Acid Reflux)</strong><div class="medicines">Nux Vomica <span class="potency">30C</span>, Robinia <span class="potency">30C</span>, Iris Versicolor <span class="potency">30C</span>, Carbo Veg <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Glaucoma (Aankh ka dabav)</strong><div class="medicines">Phosphorus <span class="potency">200C</span>, Osmium <span class="potency">30C</span>, Prunus Spinosa <span class="potency">30C</span>, Comocladia <span class="potency">30C</span>, Belladonna <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Glomerulonephritis</strong><div class="medicines">Apis Mel <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span>, Terebinthina <span class="potency">30C</span>, Phosphorus <span class="potency">30C</span>, Cantharis <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Goiter (Galgand)</strong><div class="medicines">Iodum <span class="potency">30C</span>, Spongia <span class="potency">30C</span>, Calcarea Carb <span class="potency">200C</span>, Lycopodium <span class="potency">200C</span>, Thyroidinum <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Gout (Gathiya/Baad ka rog)</strong><div class="medicines">Colchicum <span class="potency">30C</span>, Ledum <span class="potency">30C</span>, Benzoic Acid <span class="potency">30C</span>, Urtica Urens <span class="potency">30C</span>, Lycopodium <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Guillain-Barre Syndrome</strong><div class="medicines">Phosphorus <span class="potency">200C</span>, Causticum <span class="potency">200C</span>, Gelsemium <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span>, Plumbum Met <span class="potency">200C</span></div></div>
+
+            <div class="entry" id="H"><strong>Hair Loss (Baal jhadna)</strong><div class="medicines">Phosphorus <span class="potency">200C</span>, Fluoric Acid <span class="potency">200C</span>, Lycopodium <span class="potency">200C</span>, Sepia <span class="potency">200C</span>, Silicea <span class="potency">200C</span>, Natrum Mur <span class="potency">200C</span>, Selenium <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Hamorrhoids (Bawaseer)</strong><div class="medicines">Aesculus <span class="potency">30C</span>, Nux Vomica <span class="potency">30C</span>, Hamamelis <span class="potency">30C</span>, Ratanhia <span class="potency">30C</span>, Sulphur <span class="potency">200C</span>, Collinsonia <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Hay Fever</strong><div class="medicines">Allium Cepa <span class="potency">30C</span>, Euphrasia <span class="potency">30C</span>, Sabadilla <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span>, Natrum Mur <span class="potency">200C</span>, Gelsemium <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Head Injury (Sar ki chot)</strong><div class="medicines">Arnica <span class="potency">30C</span>, Natrum Sulph <span class="potency">30C</span>, Cicuta <span class="potency">30C</span>, Helleborus <span class="potency">30C</span>, Hypericum <span class="potency">30C</span>, Opium <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Headache (Sir dard)</strong><div class="medicines">Belladonna <span class="potency">30C</span>, Nux Vomica <span class="potency">30C</span>, Iris Versicolor <span class="potency">30C</span>, Sanguinaria <span class="potency">30C</span>, Gelsemium <span class="potency">30C</span>, Bryonia <span class="potency">30C</span>, Spigelia <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Hearing Loss (Suni mein kami)</strong><div class="medicines">Pulsatilla <span class="potency">30C</span>, Silicea <span class="potency">200C</span>, Graphites <span class="potency">200C</span>, Phosphorus <span class="potency">200C</span>, Baryta Carb <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Heart Attack (Dil ka daura)</strong><div class="medicines">Cactus <span class="potency">30C</span>, Crataegus <span class="potency">Q</span>, Arnica <span class="potency">30C</span>, Camphor <span class="potency">30C</span>, Carbo Veg <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Hemiplegia (Ardhanga ghata)</strong><div class="medicines">Causticum <span class="potency">200C</span>, Lachesis <span class="potency">200C</span>, Phosphorus <span class="potency">200C</span>, Baryta Carb <span class="potency">200C</span>, Nux Vomica <span class="potency">200C</span>, Opium <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Hemophilia</strong><div class="medicines">Phosphorus <span class="potency">200C</span>, Crotalus Horridus <span class="potency">30C</span>, Lachesis <span class="potency">200C</span>, Secale Cor <span class="potency">30C</span>, Hamamelis <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Hemorrhage (Khoon behna)</strong><div class="medicines">Ipecac <span class="potency">30C</span>, Erigeron <span class="potency">30C</span>, Trillium <span class="potency">30C</span>, Secale Cor <span class="potency">30C</span>, Phosphorus <span class="potency">30C</span>, Hamamelis <span class="potency">30C</span>, Millefolium <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Hemorrhoids (Bawaseer)</strong><div class="medicines">Aesculus <span class="potency">30C</span>, Nux Vomica <span class="potency">30C</span>, Hamamelis <span class="potency">30C</span>, Ratanhia <span class="potency">30C</span>, Sulphur <span class="potency">200C</span>, Collinsonia <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Hepatitis (Yakrit ki sujan)</strong><div class="medicines">Chelidonium <span class="potency">30C</span>, Carduus Marianus <span class="potency">Q</span>, Phosphorus <span class="potency">30C</span>, Lycopodium <span class="potency">200C</span>, Nux Vomica <span class="potency">30C</span>, Bryonia <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Hernia (Gudha)</strong><div class="medicines">Nux Vomica <span class="potency">30C</span>, Lycopodium <span class="potency">200C</span>, Calcarea Carb <span class="potency">200C</span>, Silicea <span class="potency">200C</span>, Rhus Tox <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Herpes</strong><div class="medicines">Natrum Mur <span class="potency">200C</span>, Rhus Tox <span class="potency">30C</span>, Graphites <span class="potency">200C</span>, Mezereum <span class="potency">30C</span>, Sepia <span class="potency">200C</span>, Thuja <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Hiccups (Hichki)</strong><div class="medicines">Nux Vomica <span class="potency">30C</span>, Ignatia <span class="potency">30C</span>, Cicuta <span class="potency">30C</span>, Cuprum Met <span class="potency">30C</span>, Ipecac <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>High Blood Pressure (Uchcha rakt chaap)</strong><div class="medicines">Glonoine <span class="potency">30C</span>, Natrum Mur <span class="potency">200C</span>, Arsenicum Album <span class="potency">30C</span>, Belladonna <span class="potency">30C</span>, Gelsemium <span class="potency">30C</span>, Rauwolfia <span class="potency">Q</span>, Crataegus <span class="potency">Q</span></div></div>
+            
+            <div class="entry"><strong>Hives (Chhapaki)</strong><div class="medicines">Apis Mel <span class="potency">30C</span>, Natrum Mur <span class="potency">30C</span>, Urtica Urens <span class="potency">30C</span>, Rhus Tox <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Hydrocele</strong><div class="medicines">Rhododendron <span class="potency">30C</span>, Pulsatilla <span class="potency">30C</span>, Silicea <span class="potency">200C</span>, Clematis <span class="potency">30C</span>, Conium <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Hydrocephalus (Dimag mein pani)</strong><div class="medicines">Apis Mel <span class="potency">30C</span>, Belladonna <span class="potency">30C</span>, Helleborus <span class="potency">30C</span>, Zincum <span class="potency">30C</span>, Sulphur <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Hyperacidity (Zyada acidity)</strong><div class="medicines">Nux Vomica <span class="potency">30C</span>, Robinia <span class="potency">30C</span>, Iris Versicolor <span class="potency">30C</span>, Carbo Veg <span class="potency">30C</span>, Natrum Phos <span class="potency">6X</span></div></div>
+            
+            <div class="entry"><strong>Hyperthyroidism (Thyroid ka badna)</strong><div class="medicines">Iodum <span class="potency">200C</span>, Lachesis <span class="potency">200C</span>, Natrum Mur <span class="potency">200C</span>, Spongia <span class="potency">30C</span>, Calcarea Carb <span class="potency">200C</span>, Thyroidinum <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Hypertension (Uchcha rakt chaap)</strong><div class="medicines">Glonoine <span class="potency">30C</span>, Natrum Mur <span class="potency">200C</span>, Arsenicum Album <span class="potency">30C</span>, Belladonna <span class="potency">30C</span>, Gelsemium <span class="potency">30C</span>, Rauwolfia <span class="potency">Q</span></div></div>
+            
+            <div class="entry"><strong>Hypotension (Neecha rakt chaap)</strong><div class="medicines">Gelsemium <span class="potency">30C</span>, Carbo Veg <span class="potency">30C</span>, China <span class="potency">30C</span>, Laurocerasus <span class="potency">30C</span>, Acid Phos <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Hypothyroidism (Thyroid ka kam hona)</strong><div class="medicines">Calcarea Carb <span class="potency">200C</span>, Thuja <span class="potency">200C</span>, Natrum Mur <span class="potency">200C</span>, Lycopodium <span class="potency">200C</span>, Spongia <span class="potency">30C</span>, Thyroidinum <span class="potency">200C</span>, Sepia <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Hysteria</strong><div class="medicines">Ignatia <span class="potency">200C</span>, Moschus <span class="potency">30C</span>, Asafoetida <span class="potency">30C</span>, Tarentula <span class="potency">200C</span>, Platina <span class="potency">30C</span></div></div>
+
+            <div class="entry" id="I"><strong>Ichthyosis (Twacha sukhna)</strong><div class="medicines">Alumina <span class="potency">200C</span>, Petroleum <span class="potency">30C</span>, Arsenicum Album <span class="potency">200C</span>, Sulphur <span class="potency">200C</span>, Graphites <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Impetigo (Chhalke)</strong><div class="medicines">Antim Crud <span class="potency">30C</span>, Mezereum <span class="potency">30C</span>, Sulphur <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span>, Graphites <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Impotence (Napunsakta)</strong><div class="medicines">Lycopodium <span class="potency">200C</span>, Agnus Castus <span class="potency">200C</span>, Caladium <span class="potency">30C</span>, Selenium <span class="potency">30C</span>, Phosphorus <span class="potency">200C</span>, Avena Sativa <span class="potency">Q</span></div></div>
+            
+            <div class="entry"><strong>Indigestion (Apach)</strong><div class="medicines">Nux Vomica <span class="potency">30C</span>, Carbo Veg <span class="potency">30C</span>, Pulsatilla <span class="potency">30C</span>, Lycopodium <span class="potency">30C</span>, Bryonia <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Infertility (Banjhpan)</strong><div class="medicines">Pulsatilla <span class="potency">200C</span>, Sepia <span class="potency">200C</span>, Calcarea Carb <span class="potency">200C</span>, Lycopodium <span class="potency">200C</span>, Thuja <span class="potency">200C</span>, Medorrhinum <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Influenza (Flu)</strong><div class="medicines">Gelsemium <span class="potency">30C</span>, Eupatorium Perf <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span>, Aconite <span class="potency">30C</span>, Bryonia <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Insomnia (Neend na aana)</strong><div class="medicines">Coffea <span class="potency">200C</span>, Nux Vomica <span class="potency">30C</span>, Pulsatilla <span class="potency">30C</span>, Ignatia <span class="potency">200C</span>, Passiflora <span class="potency">Q</span>, Phosphorus <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Intestinal Obstruction</strong><div class="medicines">Nux Vomica <span class="potency">30C</span>, Opium <span class="potency">30C</span>, Bryonia <span class="potency">30C</span>, Belladonna <span class="potency">30C</span>, Lycopodium <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Irritable Bowel Syndrome (IBS)</strong><div class="medicines">Nux Vomica <span class="potency">30C</span>, Arg Nit <span class="potency">30C</span>, Pulsatilla <span class="potency">30C</span>, Lycopodium <span class="potency">200C</span>, Aloe <span class="potency">30C</span>, Colocynth <span class="potency">30C</span>, Natrum Mur <span class="potency">200C</span></div></div>
+
+            <div class="entry" id="J"><strong>Jaundice (Piliya)</strong><div class="medicines">Chelidonium <span class="potency">30C</span>, Carduus Marianus <span class="potency">Q</span>, Phosphorus <span class="potency">30C</span>, Lycopodium <span class="potency">30C</span>, China <span class="potency">30C</span>, Myrica <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Jaw Pain (Jabda ka dard)</strong><div class="medicines">Rhus Tox <span class="potency">30C</span>, Mag Phos <span class="potency">6X</span>, Nux Vomica <span class="potency">30C</span>, Merc Sol <span class="potency">30C</span>, Phosphorus <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Joint Pain (Jodo ka dard)</strong><div class="medicines">Rhus Tox <span class="potency">30C</span>, Bryonia <span class="potency">30C</span>, Ledum <span class="potency">30C</span>, Causticum <span class="potency">30C</span>, Calcarea Carb <span class="potency">200C</span>, Benzoic Acid <span class="potency">30C</span></div></div>
+
+            <div class="entry" id="K"><strong>Keloids (Ghudode ka badna)</strong><div class="medicines">Silicea <span class="potency">200C</span>, Graphites <span class="potency">200C</span>, Thiosinaminum <span class="potency">30C</span>, Nitric Acid <span class="potency">200C</span>, Thuja <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Kidney Failure (Gurda kharab hona)</strong><div class="medicines">Arsenicum Album <span class="potency">30C</span>, Phosphorus <span class="potency">30C</span>, Apis Mel <span class="potency">30C</span>, Lycopodium <span class="potency">200C</span>, Terebinthina <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Kidney Stones (Gurde ki pathri)</strong><div class="medicines">Berberis Vulg <span class="potency">30C</span>, Lycopodium <span class="potency">200C</span>, Sarsaparilla <span class="potency">30C</span>, Ocimum Canum <span class="potency">30C</span>, Calcarea Carb <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Knee Pain (Ghutne ka dard)</strong><div class="medicines">Rhus Tox <span class="potency">30C</span>, Bryonia <span class="potency">30C</span>, Ledum <span class="potency">30C</span>, Calcarea Carb <span class="potency">200C</span>, Benzoic Acid <span class="potency">30C</span>, Silicea <span class="potency">200C</span></div></div>
+
+            <div class="entry" id="L"><strong>Labyrinthitis (Kan ka chakkar)</strong><div class="medicines">Belladonna <span class="potency">30C</span>, Conium <span class="potency">30C</span>, Cocculus <span class="potency">30C</span>, Pulsatilla <span class="potency">30C</span>, Gelsemium <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Laryngitis (Awaz baithna)</strong><div class="medicines">Aconite <span class="potency">30C</span>, Arum Triph <span class="potency">30C</span>, Causticum <span class="potency">30C</span>, Phosphorus <span class="potency">30C</span>, Spongia <span class="potency">30C</span>, Drosera <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Leucoderma (Safed daag)</strong><div class="medicines">Arsenicum Sulph Flavum <span class="potency">30C</span>, Syphilinum <span class="potency">200C</span>, Thuja <span class="potency">200C</span>, Natrum Mur <span class="potency">200C</span>, Phosphorus <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Leucorrhoea (Safed pani)</strong><div class="medicines">Calcarea Carb <span class="potency">200C</span>, Sepia <span class="potency">200C</span>, Pulsatilla <span class="potency">30C</span>, Alumina <span class="potency">30C</span>, Kreosote <span class="potency">30C</span>, Nitric Acid <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Leukemia (Khoon ka cancer)</strong><div class="medicines">Phosphorus <span class="potency">200C</span>, Arsenicum Album <span class="potency">200C</span>, Lycopodium <span class="potency">200C</span>, Carcinosin <span class="potency">200C</span>, China <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Lichen Planus</strong><div class="medicines">Thuja <span class="potency">200C</span>, Sulphur <span class="potency">200C</span>, Arsenicum Album <span class="potency">200C</span>, Natrum Mur <span class="potency">200C</span>, Nitric Acid <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Lipoma (Charbi ka gota)</strong><div class="medicines">Calcarea Carb <span class="potency">200C</span>, Thuja <span class="potency">200C</span>, Baryta Carb <span class="potency">200C</span>, Silicea <span class="potency">200C</span>, Phytolacca <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Liver Cirrhosis</strong><div class="medicines">Lycopodium <span class="potency">200C</span>, Carduus Marianus <span class="potency">Q</span>, Phosphorus <span class="potency">200C</span>, Chelidonium <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Low Back Pain (Kamar dard)</strong><div class="medicines">Rhus Tox <span class="potency">30C</span>, Bryonia <span class="potency">30C</span>, Kali Carb <span class="potency">30C</span>, Nux Vomica <span class="potency">30C</span>, Arnica <span class="potency">30C</span>, Silicea <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Lung Cancer (Phusphus ka cancer)</strong><div class="medicines">Phosphorus <span class="potency">200C</span>, Carcinosin <span class="potency">200C</span>, Arsenicum Album <span class="potency">200C</span>, Bryonia <span class="potency">30C</span>, Antim Tart <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Lupus</strong><div class="medicines">Thuja <span class="potency">200C</span>, Lachesis <span class="potency">200C</span>, Arsenicum Album <span class="potency">200C</span>, Nitric Acid <span class="potency">200C</span>, Phosphorus <span class="potency">200C</span>, Apis Mel <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Lyme Disease</strong><div class="medicines">Ledum <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span>, Rhus Tox <span class="potency">30C</span>, Phosphorus <span class="potency">30C</span>, Belladonna <span class="potency">30C</span></div></div>
+
+            <div class="entry" id="M"><strong>Macular Degeneration</strong><div class="medicines">Phosphorus <span class="potency">200C</span>, Lycopodium <span class="potency">200C</span>, Sepia <span class="potency">200C</span>, Arnica <span class="potency">30C</span>, Cineraria Maritima <span class="potency">Q</span></div></div>
+            
+            <div class="entry"><strong>Malaria (Malaria bukhar)</strong><div class="medicines">Arsenicum Album <span class="potency">30C</span>, China <span class="potency">30C</span>, Natrum Mur <span class="potency">200C</span>, Eupatorium Perf <span class="potency">30C</span>, Ipecac <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Mastitis (Stan ki sujan)</strong><div class="medicines">Belladonna <span class="potency">30C</span>, Phytolacca <span class="potency">30C</span>, Bryonia <span class="potency">30C</span>, Silicea <span class="potency">30C</span>, Hepar Sulph <span class="potency">30C</span>, Pulsatilla <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Measles (Khasra)</strong><div class="medicines">Aconite <span class="potency">30C</span>, Pulsatilla <span class="potency">30C</span>, Gelsemium <span class="potency">30C</span>, Bryonia <span class="potency">30C</span>, Euphrasia <span class="potency">30C</span>, Morbillinum <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Melasma (Chehre ke daag)</strong><div class="medicines">Sepia <span class="potency">200C</span>, Thuja <span class="potency">200C</span>, Lycopodium <span class="potency">200C</span>, Sulphur <span class="potency">200C</span>, Natrum Mur <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Meniere's Disease (Kan ka shor)</strong><div class="medicines">Theridion <span class="potency">30C</span>, Salicylic Acid <span class="potency">30C</span>, Chininum Sulph <span class="potency">30C</span>, Pulsatilla <span class="potency">30C</span>, Conium <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Meningitis (Dimag ki pardi ki sujan)</strong><div class="medicines">Aconite <span class="potency">30C</span>, Belladonna <span class="potency">30C</span>, Apis Mel <span class="potency">30C</span>, Helleborus <span class="potency">30C</span>, Bryonia <span class="potency">30C</span>, Zincum <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Menopause (Mahamari ka rukna)</strong><div class="medicines">Lachesis <span class="potency">200C</span>, Sepia <span class="potency">200C</span>, Sulphur <span class="potency">200C</span>, Calcarea Carb <span class="potency">200C</span>, Pulsatilla <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Menorrhagia (Zyada mahamari)</strong><div class="medicines">Secale Cor <span class="potency">30C</span>, Trillium <span class="potency">30C</span>, Erigeron <span class="potency">30C</span>, Belladonna <span class="potency">30C</span>, Calcarea Carb <span class="potency">200C</span>, Sabina <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Mental Retardation</strong><div class="medicines">Baryta Carb <span class="potency">1M</span>, Calcarea Carb <span class="potency">200C</span>, Thuja <span class="potency">1M</span>, Medorrhinum <span class="potency">1M</span>, Carcinosin <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Migraine (Adhasisi)</strong><div class="medicines">Belladonna <span class="potency">200C</span>, Iris Versicolor <span class="potency">30C</span>, Sanguinaria <span class="potency">200C</span>, Spigelia <span class="potency">30C</span>, Nux Vomica <span class="potency">200C</span>, Natrum Mur <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Miscarriage (Garbhapata)</strong><div class="medicines">Aconite <span class="potency">30C</span>, Apis Mel <span class="potency">30C</span>, Belladonna <span class="potency">30C</span>, Caulophyllum <span class="potency">30C</span>, Sabina <span class="potency">30C</span>, Secale Cor <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Motion Sickness (Yatra bhranti)</strong><div class="medicines">Cocculus <span class="potency">30C</span>, Nux Vomica <span class="potency">30C</span>, Tabacum <span class="potency">30C</span>, Sepia <span class="potency">30C</span>, Petroleum <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Mouth Ulcers (Muh ke chhale)</strong><div class="medicines">Merc Sol <span class="potency">30C</span>, Borax <span class="potency">30C</span>, Nitric Acid <span class="potency">30C</span>, Hepar Sulph <span class="potency">30C</span>, Sulphur <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Multiple Sclerosis</strong><div class="medicines">Phosphorus <span class="potency">1M</span>, Causticum <span class="potency">200C</span>, Arsenicum Album <span class="potency">200C</span>, Lycopodium <span class="potency">200C</span>, Plumbum Met <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Mumps (Galashunth)</strong><div class="medicines">Belladonna <span class="potency">30C</span>, Mercurius <span class="potency">30C</span>, Pulsatilla <span class="potency">30C</span>, Phytolacca <span class="potency">30C</span>, Jaborandi <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Myasthenia Gravis</strong><div class="medicines">Phosphorus <span class="potency">200C</span>, Arsenicum Album <span class="potency">200C</span>, Gelsemium <span class="potency">30C</span>, Causticum <span class="potency">200C</span>, Sepia <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Myopia (Nazar ki kamzori)</strong><div class="medicines">Physostigma <span class="potency">30C</span>, Phosphorus <span class="potency">200C</span>, Ruta <span class="potency">30C</span>, Calcarea Phos <span class="potency">6X</span>, Natrum Mur <span class="potency">200C</span></div></div>
+
+            <div class="entry" id="N"><strong>Nail Affections (Nakh vikar)</strong><div class="medicines">Silicea <span class="potency">200C</span>, Graphites <span class="potency">200C</span>, Antim Crud <span class="potency">30C</span>, Fluoric Acid <span class="potency">30C</span>, Thuja <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Nasal Polyp (Nak ka massa)</strong><div class="medicines">Sanguinaria <span class="potency">30C</span>, Teucrium <span class="potency">30C</span>, Calcarea Carb <span class="potency">200C</span>, Thuja <span class="potency">200C</span>, Phosphorus <span class="potency">30C</span>, Nitric Acid <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Nausea (Jee machalna)</strong><div class="medicines">Ipecac <span class="potency">30C</span>, Nux Vomica <span class="potency">30C</span>, Antim Crud <span class="potency">30C</span>, Sepia <span class="potency">30C</span>, Pulsatilla <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Nephrotic Syndrome</strong><div class="medicines">Apis Mel <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span>, Terebinthina <span class="potency">30C</span>, Phosphorus <span class="potency">30C</span>, Lycopodium <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Neuralgia (Nadi ka dard)</strong><div class="medicines">Spigelia <span class="potency">30C</span>, Aconite <span class="potency">30C</span>, Mag Phos <span class="potency">6X</span>, Colocynth <span class="potency">30C</span>, Nux Vomica <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Neuropathy</strong><div class="medicines">Hypericum <span class="potency">30C</span>, Phosphorus <span class="potency">200C</span>, Arsenicum Album <span class="potency">200C</span>, Plumbum Met <span class="potency">200C</span>, Nux Vomica <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Night Blindness (Raat andhera)</strong><div class="medicines">Phosphorus <span class="potency">200C</span>, Belladonna <span class="potency">30C</span>, Ruta <span class="potency">30C</span>, Conium <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Night Sweats (Raat mein pasina)</strong><div class="medicines">Sulphur <span class="potency">200C</span>, Phosphorus <span class="potency">30C</span>, China <span class="potency">30C</span>, Silicea <span class="potency">200C</span>, Natrum Mur <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Night Terrors (Raat ka darr)</strong><div class="medicines">Stramonium <span class="potency">30C</span>, Kali Brom <span class="potency">30C</span>, Phosphorus <span class="potency">30C</span>, Belladonna <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Nosebleed (Nak se khoon)</strong><div class="medicines">Ferrum Phos <span class="potency">6X</span>, Hamamelis <span class="potency">30C</span>, Aconite <span class="potency">30C</span>, Melilotus <span class="potency">30C</span>, Phosphorus <span class="potency">30C</span>, Ipecac <span class="potency">30C</span></div></div>
+
+            <div class="entry" id="O"><strong>Obesity (Motaapa)</strong><div class="medicines">Calcarea Carb <span class="potency">200C</span>, Natrum Mur <span class="potency">200C</span>, Lycopodium <span class="potency">200C</span>, Graphites <span class="potency">200C</span>, Thuja <span class="potency">200C</span>, Fucus <span class="potency">Q</span>, Phytolacca <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Obsessive Compulsive Disorder (OCD)</strong><div class="medicines">Arsenicum Album <span class="potency">200C</span>, Natrum Mur <span class="potency">1M</span>, Syphilinum <span class="potency">200C</span>, Carcinosin <span class="potency">200C</span>, Ignatia <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Oligospermia (Virya mein sperm kami)</strong><div class="medicines">Lycopodium <span class="potency">200C</span>, Agnus Castus <span class="potency">200C</span>, Conium <span class="potency">200C</span>, Selenium <span class="potency">30C</span>, Aurum Met <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Onychomycosis (Nakh ki fungus)</strong><div class="medicines">Silicea <span class="potency">200C</span>, Graphites <span class="potency">200C</span>, Antim Crud <span class="potency">30C</span>, Thuja <span class="potency">200C</span>, Nitric Acid <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Orchitis (Testes ki sujan)</strong><div class="medicines">Pulsatilla <span class="potency">30C</span>, Clematis <span class="potency">30C</span>, Rhododendron <span class="potency">30C</span>, Spongia <span class="potency">30C</span>, Belladonna <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Osteoarthritis (Sandhivata)</strong><div class="medicines">Rhus Tox <span class="potency">30C</span>, Bryonia <span class="potency">30C</span>, Calcarea Carb <span class="potency">200C</span>, Pulsatilla <span class="potency">30C</span>, Ledum <span class="potency">30C</span>, Benzoic Acid <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Osteomalacia (Haddi naram hona)</strong><div class="medicines">Calcarea Carb <span class="potency">200C</span>, Calcarea Phos <span class="potency">6X</span>, Silicea <span class="potency">200C</span>, Phosphorus <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Osteomyelitis (Haddi ka naasoor)</strong><div class="medicines">Hepar Sulph <span class="potency">200C</span>, Silicea <span class="potency">200C</span>, Mercurius <span class="potency">30C</span>, Echinacea <span class="potency">30C</span>, Phosphorus <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Osteoporosis (Haddi kamzor hona)</strong><div class="medicines">Calcarea Carb <span class="potency">200C</span>, Calcarea Phos <span class="potency">6X</span>, Silicea <span class="potency">200C</span>, Phosphorus <span class="potency">200C</span>, Fluoric Acid <span class="potency">30C</span>, Symphytum <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Otitis Media (Kan ka dard/pus)</strong><div class="medicines">Pulsatilla <span class="potency">30C</span>, Belladonna <span class="potency">30C</span>, Chamomilla <span class="potency">30C</span>, Silicea <span class="potency">200C</span>, Hepar Sulph <span class="potency">30C</span>, Merc Sol <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Ovarian Cyst (Andkosh ki thaili)</strong><div class="medicines">Apis Mel <span class="potency">30C</span>, Lachesis <span class="potency">200C</span>, Sepia <span class="potency">200C</span>, Pulsatilla <span class="potency">30C</span>, Thuja <span class="potency">200C</span>, Conium <span class="potency">30C</span></div></div>
+
+            <div class="entry" id="P"><strong>Palpitations (Dhadkane tez hona)</strong><div class="medicines">Aconite <span class="potency">30C</span>, Gelsemium <span class="potency">30C</span>, Spigelia <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span>, Phosphorus <span class="potency">30C</span>, Lachesis <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Pancreatitis</strong><div class="medicines">Iris Versicolor <span class="potency">30C</span>, Phosphorus <span class="potency">30C</span>, Ipecac <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span>, Belladonna <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Panic Attacks</strong><div class="medicines">Aconite <span class="potency">30C</span>, Argentum Nitricum <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span>, Gelsemium <span class="potency">30C</span>, Ignatia <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Paralysis (Lakva)</strong><div class="medicines">Causticum <span class="potency">200C</span>, Lachesis <span class="potency">200C</span>, Phosphorus <span class="potency">200C</span>, Baryta Carb <span class="potency">200C</span>, Nux Vomica <span class="potency">200C</span>, Opium <span class="potency">30C</span>, Plumbum Met <span class="potency">200C</span></div></div>
+            
+            <div class="entry"><strong>Parkinson's Disease (Kamp rog)</strong><div class="medicines">Mercurius <span class="potency">200C</span>, Plumbum Met <span class="potency">200C</span>, Gelsemium <span class="potency">30C</span>, Causticum <span class="potency">200C</span>, Zincum <span class="potency">200C</span>, Agaricus <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Peptic Ulcer</strong><div class="medicines">Phosphorus <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span>, Nux Vomica <span class="potency">30C</span>, Kali Bich <span class="potency">30C</span>, Carbo Veg <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Pericarditis</strong><div class="medicines">Aconite <span class="potency">30C</span>, Bryonia <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span>, Spigelia <span class="potency">30C</span>, Phosphorus <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Pertussis (Kali khasi)</strong><div class="medicines">Drosera <span class="potency">30C</span>, Coccus Cacti <span class="potency">30C</span>, Ipecac <span class="potency">30C</span>, Bryonia <span class="potency">30C</span>, Antim Tart <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Pharyngitis (Gale ki sujan)</strong><div class="medicines">Belladonna <span class="potency">30C</span>, Aconite <span class="potency">30C</span>, Hepar Sulph <span class="potency">30C</span>, Phosphorus <span class="potency">30C</span>, Merc Sol <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Piles (Bawaseer)</strong><div class="medicines">Aesculus <span class="potency">30C</span>, Nux Vomica <span class="potency">30C</span>, Hamamelis <span class="potency">30C</span>, Ratanhia <span class="potency">30C</span>, Sulphur <span class="potency">200C</span>, Collinsonia <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Pleurisy (Chhati ka dard)</strong><div class="medicines">Bryonia <span class="potency">30C</span>, Aconite <span class="potency">30C</span>, Cantharis <span class="potency">30C</span>, Hepar Sulph <span class="potency">30C</span>, Arsenicum Album <span class="potency">30C</span></div></div>
+            
+            <div class="entry"><strong>Pneumonia (Nimonia)</strong><div class="medicines">Phosphorus <span class="potency">30C</span>, Bryonia <span class="potency">30C</span>, Antim Tart <span class="potency">30C</span
